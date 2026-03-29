@@ -2,7 +2,7 @@
 name = "atr"
 version = "0.1.0"
 edition = "2021"
-license = "Apache-2.0"
+license = "AGPL-3.0"
 repository = "https://github.com/InnerWarden/atr"
 homepage = "https://innerwarden.com"
 description = "Agent Threat Rules — open detection rules for AI agent security threats. Like Sigma, but for LLMs."
