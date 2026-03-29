@@ -1,0 +1,21 @@
+[package]
+name = "atr"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/InnerWarden/atr"
+homepage = "https://innerwarden.com"
+description = "Agent Threat Rules — open detection rules for AI agent security threats. Like Sigma, but for LLMs."
+keywords = ["ai-security", "mcp", "prompt-injection", "detection-rules", "llm"]
+categories = ["command-line-utilities", "config"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+regex = "1"
+anyhow = "1"
+tracing = "0.1"
+
+[dev-dependencies]
+tempfile = "3"
