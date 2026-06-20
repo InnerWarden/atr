@@ -42,8 +42,8 @@ detection:
       description: "Semicolon-chained dangerous command after a benign one"
     - field: content
       operator: regex
-      value: "\\$\\([^)]+\\)"
-      description: "$() subshell execution embedded in arguments"
+      value: "\\$\\(\\s*(?:rm|cat|curl|wget|nc|ncat|bash|sh|python|perl|ruby|php|whoami|id|uname|env|printenv|set|export|eval|exec|chmod|chown|kill|pkill|dd|mkfs|mount|umount|sudo|su|passwd|base64|xxd|openssl|tee)[^)]*\\)"
+      description: "$() subshell running a dangerous command inside arguments"
     - field: content
       operator: regex
       value: "`(?:rm|cat|curl|wget|nc|ncat|bash|sh|python|perl|ruby|php|whoami|id|uname|env|printenv|set|export|eval|exec|chmod|chown|kill|pkill|dd|mkfs|mount|umount|sudo|su|passwd)[^`]*`"
@@ -89,3 +89,9 @@ test_cases:
     - content: "The output format uses pipe-delimited columns for the CSV export."
       expected: not_triggered
       description: "Legitimate use of the word pipe in documentation"
+    - content: "tar czf backup-$(date +%F).tgz ./src ./docs"
+      expected: not_triggered
+      description: "Benign subshell ($(date)/$(pwd)/$(git ...)) is everyday shell, not injection"
+    - content: "echo building $(git rev-parse --short HEAD)"
+      expected: not_triggered
+      description: "Command substitution with a safe command must not be flagged"
