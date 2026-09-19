@@ -1,4 +1,6 @@
-# ATR — Agent Threat Rules
+# InnerWarden ATR engine
+
+A Rust loader and matcher for [Agent Threat Rules](https://github.com/Agent-Threat-Rule/agent-threat-rules) YAML, with a vendored copy of that project's March 2026 ruleset.
 
 **Open detection rules for AI agent security threats.** Like [Sigma](https://github.com/SigmaHQ/sigma) for SIEMs, but for AI agents and MCP servers.
 
@@ -53,7 +55,7 @@ println!("Loaded {} rules", engine.rule_count());
 // Check user input for prompt injection
 let matches = engine.check_user_input("ignore all previous instructions");
 for m in &matches {
-    println!("[{}] {} — {}", m.rule_id, m.severity, m.matched_condition);
+    println!("[{}] {}: {}", m.rule_id, m.severity, m.matched_condition);
 }
 
 // Check tool response for poisoning
