@@ -94,3 +94,11 @@ Rules match against specific inspection points:
 ---
 
 Part of the [InnerWarden](https://innerwarden.com) security ecosystem.
+
+## License
+
+MIT. See `LICENSE`.
+
+The YAML rules under `rules/` are derived from
+[Agent Threat Rules](https://github.com/Agent-Threat-Rule/agent-threat-rules),
+Copyright (c) 2026 ATR Contributors, MIT licensed. See `NOTICE`.

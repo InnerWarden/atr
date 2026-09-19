@@ -1,0 +1,24 @@
+ATR engine and rules
+Copyright (c) 2026 InnerWarden
+MIT License (see LICENSE).
+
+================================================================================
+Third-party material
+================================================================================
+
+Agent Threat Rules (ATR)
+------------------------
+
+The YAML detection rules under `rules/` are derived from the Agent Threat
+Rules project:
+
+    https://github.com/Agent-Threat-Rule/agent-threat-rules
+    Copyright (c) 2026 ATR Contributors
+    MIT License
+
+They were taken from that project's tree at commit efad113 (2026-03-26,
+"v0.4.0 - 71 rules"), and one has since been modified here. Each rule file
+carries its original `author:` line.
+
+The MIT copyright and permission notice for that material is carried in
+LICENSE alongside this project's own.
